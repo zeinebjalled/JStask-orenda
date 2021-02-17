@@ -165,3 +165,68 @@ footer span a:hover{
   text-decoration: underline;
 }
 
+.header {
+  padding: 260px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.artc{
+  width: 250px;
+  height: 500px;
+  background-color: white;
+  margin: 20px 0;
+}
+.artc-img {
+  height: 65%;
+  width: 100%;
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/11.jpg");
+  background-size: cover;
+}
+.artc-txt {
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artc-txt div {
+  margin: 5px 0;
+} 
+.col-siz {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.artc-btn button {
+  padding: 5px;
+  width: 100px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: black;
+  color: white;
+  background-color: black;
+}
+.img-part2 {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width:768px){
+  .artc {
+      width: 100%;
+  }
+}
+#prod-div {
+  height: 90%;
+  width: 80%;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+

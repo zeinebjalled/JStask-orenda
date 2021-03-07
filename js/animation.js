@@ -88,7 +88,10 @@ let clothes = [
       "size": "L",
       "color": "black",
       "price": 120.99
-    }
+    },
+
+  
+
   ];
   function jeantArt() {
     var artc = document.createElement("div");
@@ -97,11 +100,13 @@ let clothes = [
     artc.setAttribute("class", "artc");
     div1.setAttribute("class", "artc-img");
     div2.setAttribute("class", "artc-txt");
+    
     artc.appendChild(div1);
     artc.appendChild(div2);
     var htmlArtc = document.getElementById("prod-div");
-    var butn = document.getElementsByClassName("more")[0];
     htmlArtc.appendChild(artc)
+    
+
   }
   function artcTxt(x) {
     var name = document.createElement("div");
@@ -117,6 +122,17 @@ let clothes = [
     htmlTxt.appendChild(colSiz);
     htmlTxt.appendChild(price);
     htmlTxt.appendChild(btn);
+
+    var editbtn = document.createElement('button');
+    var deletebtn = document.createElement('button');
+    var editbtnnode = document.createTextNode('edit');
+    var deletebtnnode = document.createTextNode('delete');
+    editbtn.appendChild(editbtnnode);
+    deletebtn.appendChild(deletebtnnode);
+    deletebtn.className = 'delete';
+    editbtn.className = 'edit';
+    htmlTxt.appendChild(editbtn);
+    htmlTxt.appendChild(deletebtn);
   }
   function artcLast(v) {
     var siz = document.createElement("h3");
@@ -132,12 +148,12 @@ let clothes = [
     htmlColSiz.appendChild(color);
     htmlBtn.appendChild(btn);
   }
-  function range(nt, k) {
-    var siz = document.getElementsByClassName("siz")[nt];
-    var color = document.getElementsByClassName("color")[nt];
-    var price = document.getElementsByClassName("price")[nt];
+  function range( k) {
+    var siz = document.getElementsByClassName("siz")[k];
+    var color = document.getElementsByClassName("color")[k];
+    var price = document.getElementsByClassName("price")[k];
     var artcImg = document.getElementsByClassName("artc-img")[k];
-    var name1 = document.getElementsByClassName("name")[nt];
+    var name1 = document.getElementsByClassName("name")[k];
     var nameH = document.createElement("h2");
     var artcImgI = document.createElement("img");
     var nameNode = document.createTextNode(clothes[k].name);
@@ -153,11 +169,19 @@ let clothes = [
     artcImgI.setAttribute("src", clothes[k].image);
     artcImg.appendChild(artcImgI);
   }
-  var nt = 0;
-  for (k = 0; k < 10; k++) {
+ 
+  for (k = 0; k<(clothes.length); k++) {
     jeantArt();
-    artcTxt(nt);
-    artcLast(nt);
-    range(nt, k);
-    nt++;
+    artcTxt(k);
+    artcLast(k);
+    range(k);
+    deleteItemBtn(k);
   }
+
+  function deleteItemBtn(x) {
+    var deleteItem = document.getElementsByClassName("delete")[x];
+    deleteItem.addEventListener('click', function (event) {
+        var item = event.target.parentNode.parentNode;
+        item.remove();
+    });
+}

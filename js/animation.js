@@ -185,3 +185,19 @@ let clothes = [
         item.remove();
     });
 }
+
+function addItem() {
+  var itemName = document.forms["myForm"]["fname"].value;
+  var itemSize = document.forms["myForm"]["Size"].value;
+  var itemColor = document.forms["myForm"]["color"].value;
+  var itemPrice = document.forms["myForm"]["fprice"].value;
+  var itemImage = document.forms["myForm"]["fimage"].value;
+  var nbr = clothes.length++;
+
+  prodArt();
+  artcTxt(nbr);
+  artcLast(nbr);
+  range(k, itemName, itemColor, itemSize, itemPrice, itemImage);
+  editMenuDisplay(nbr);
+  deleteItemBtn(nbr);
+}

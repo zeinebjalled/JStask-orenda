@@ -148,7 +148,7 @@ let clothes = [
     htmlColSiz.appendChild(color);
     htmlBtn.appendChild(btn);
   }
-  function range( k) {
+  function range(k,a,b,c,d,e) {
     var siz = document.getElementsByClassName("siz")[k];
     var color = document.getElementsByClassName("color")[k];
     var price = document.getElementsByClassName("price")[k];
@@ -156,17 +156,17 @@ let clothes = [
     var name1 = document.getElementsByClassName("name")[k];
     var nameH = document.createElement("h2");
     var artcImgI = document.createElement("img");
-    var nameNode = document.createTextNode(clothes[k].name);
-    var colorNode = document.createTextNode(clothes[k].color);
+    var nameNode = document.createTextNode(a);
+    var colorNode = document.createTextNode(b);
     color.appendChild(colorNode);
     nameH.appendChild(nameNode);
     name1.appendChild(nameH);
-    var sizNode = document.createTextNode(clothes[k].size);
+    var sizNode = document.createTextNode(c);
     siz.appendChild(sizNode);
-    var priceNode = document.createTextNode(clothes[k].price);
+    var priceNode = document.createTextNode(d);
     price.appendChild(priceNode);
     artcImgI.setAttribute("class", "img-part2");
-    artcImgI.setAttribute("src", clothes[k].image);
+    artcImgI.setAttribute("src", e);
     artcImg.appendChild(artcImgI);
   }
  

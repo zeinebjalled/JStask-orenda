@@ -174,7 +174,7 @@ let clothes = [
     jeantArt();
     artcTxt(k);
     artcLast(k);
-    range(k);
+    range(k, clothes[k].name, clothes[k].color, clothes[k].size, clothes[k].price, clothes[k].image);
     deleteItemBtn(k);
   }
 
@@ -194,10 +194,10 @@ function addItem() {
   var itemImage = document.forms["myForm"]["fimage"].value;
   var nbr = clothes.length++;
 
-  prodArt();
+ jeantArt();
   artcTxt(nbr);
   artcLast(nbr);
   range(k, itemName, itemColor, itemSize, itemPrice, itemImage);
-  editMenuDisplay(nbr);
+  
   deleteItemBtn(nbr);
 }
